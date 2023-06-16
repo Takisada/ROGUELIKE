@@ -23,7 +23,7 @@ public class PlayerInteractions : MonoBehaviour
         dead = false;
     }
 
-    public void Death()
+    public static void Death()
     {
         SceneManager.LoadScene(0);
     }

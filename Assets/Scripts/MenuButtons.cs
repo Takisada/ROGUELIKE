@@ -10,12 +10,12 @@ public class MenuButtons : MonoBehaviour
    }
    public void RecordsButton()
    {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(3);
 
    }
    public void ExitButton()
    {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(4);
    }
 
 }

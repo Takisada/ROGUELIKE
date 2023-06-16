@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class EnemyInteractions : MonoBehaviour
 {
+    public bool KARTOFELINA;
+    public Enemies bebra;
     Animator animator;
     public float health;
     public float damage;
-
+    public Rigidbody2D rb;
+    void Start()
+    {
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        bebra = gameObject.GetComponent<Enemies>();
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         animator = GetComponent<Animator>();
@@ -23,6 +30,10 @@ public class EnemyInteractions : MonoBehaviour
         if (health <= 0f)
         {
             Death();
+        }
+        if (KARTOFELINA)
+        {
+            bebra.SHAIBA = true;
         }
     }
     void Death()

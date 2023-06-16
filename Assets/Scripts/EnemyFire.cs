@@ -27,7 +27,7 @@ public class EnemyFire : MonoBehaviour
     public IEnumerator PIVO()
     {
         zapuscheno = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         zapuscheno = true;
     }
 }

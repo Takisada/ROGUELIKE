@@ -19,7 +19,7 @@ public class RECORDMEME : MonoBehaviour
 
     public static void AddScore()
     {
-        recordiki.Add(new RECORDDATA(DOORS.getlvl, DOORS.gettime));
+        recordiki.Add(new RECORDDATA(RoomMove.getlvl, RoomMove.gettime));
         Debug.Log(recordiki[0].recordlvl.ToString() + " " + recordiki[0].times.ToString());
     }
     public static void SaveScore()

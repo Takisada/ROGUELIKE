@@ -12,18 +12,9 @@ public class ENEMYSHOOTING : MonoBehaviour
     {
         snaryad = GetComponent<Rigidbody2D>();
         rotate = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemies>();
-        if (rotate.STORONA == false)
-        {
-            Vector3 scale = transform.localScale;
-            scale.x *= -1;
-            transform.localScale = scale;
-            snaryad.AddForce(new Vector2(-force, 0f));
-        }
-        else if (rotate.STORONA == true)
-        {
-            snaryad.AddForce(new Vector2(force, 0f));
-        }
-        Destroy(gameObject, 1f);
+        snaryad.AddForce((rotate.target.transform.position - transform.position).normalized*force);
+        
+        Destroy(gameObject, 2f);
 
     }
     void OnTriggerEnter2D(Collider2D other)

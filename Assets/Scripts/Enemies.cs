@@ -6,10 +6,11 @@ using UnityEngine;
 public class Enemies : MonoBehaviour
 {
     public float speed;
+    public bool SHAIBA = false;
     public float chaseDistanse;
     public float stopDistance;
     public bool STORONA;
-    private GameObject target;
+    public GameObject target;
     public float distanceToTarget;
     Animator animator;
     Rigidbody2D rigidbody1;
@@ -48,7 +49,7 @@ public class Enemies : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = true;
             STORONA = false;
         }
-        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, (SHAIBA?speed*2:speed) * Time.deltaTime);
         animator.SetBool("IsWalking", true);
     }
 }

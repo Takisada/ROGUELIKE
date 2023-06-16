@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class DOORS : MonoBehaviour
 {
+
     public PlayerInteractions dying;
     public static float timer;
     public bool DOOROPEN;
-    public bool lvlcleared;
     private GameObject Enemy;
     public int scenenum;
+
     public int RND;
     public int RND2;
     public int BOSS;
@@ -42,7 +43,7 @@ public class DOORS : MonoBehaviour
             DOOROPEN = false;
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
+    /*void OnTriggerEnter2D(Collider2D other)
     {
         
         RND = Random.Range(2, 4);
@@ -76,13 +77,13 @@ public class DOORS : MonoBehaviour
                 }
                 else if (scenenum == 4 || scenenum == 5)
                 {
-                    float pastrezult = RECORDMEME.PEREBOR(lvlnum);
-                    if (pastrezult > timer || pastrezult == 0)
+                    float pastrezult = RECORDMEME.PEREBOR(getlvl);
+                    if (pastrezult > gettime || pastrezult == 0)
                     {
                         Debug.Log("OK");
-                        if (pastrezult > timer)
+                        if (pastrezult > gettime)
                         {
-                            RECORDMEME.DEL(lvlnum);
+                            RECORDMEME.DEL(getlvl);
                         }
                         RECORDMEME.AddScore();
                         RECORDMEME.SaveScore();
@@ -95,7 +96,7 @@ public class DOORS : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
     public static float gettime
     {
         get =>  SHIP.timers;
